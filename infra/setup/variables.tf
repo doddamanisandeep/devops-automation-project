@@ -1,6 +1,6 @@
 variable "tf_state_bucket" {
   description = "name of s3 bucket for storing TF state"
-  default = "devops-automatio-bucket"
+  default = "devops-automation-bkt"
 }
 
 variable "tf_state_lock_table" {

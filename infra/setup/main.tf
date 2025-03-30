@@ -7,7 +7,7 @@ terraform {
   }
 
   backend "s3" {
-    bucket = "devops-automatio-bucket"
+    bucket = "devops-automation-bkt"
     key = "tf-state-setup"
     region = "ap-south-1"
     encrypt = true
