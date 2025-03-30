@@ -3,11 +3,11 @@ services:
   terraform:
     image: hashicorp/terraform:1.6.2
     volumes:
-      - ./setup:tf/setup
-      - ./deploy:tf/deploy
+      - ${PWD}/setup:/tf/setup
+      - ${PWD}/deploy:/tf/deploy
     working_dir: /tf
     environment:
       - AWS_ACCESS_KEY_ID=AKIA3FLD6FANW6MCW27P
       - AWS_SECRET_ACCESS_KEY_ID=g3YcaYf05xsAkTFa/+vFaMMgpTS/+Xbh4dtDA+Il
       - AWS_DEFAULT_REGION=ap-south-1
-      - AWS_WORKSPACE=${TF_WORKSPACE}
+      - AWS_WORKSPACE=default
