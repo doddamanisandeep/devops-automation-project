@@ -8,7 +8,7 @@ variable "tf_state_lock_table" {
   default = "devops-automatio-dynomodb-table"
 }
 
-variable "Project" {
+variable "project" {
   description = "Project name for tagging resources"
   default = "recepi-app-api"
 }
