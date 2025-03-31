@@ -1,14 +1,13 @@
-##############################################
-# Create IAM user and Policies for CD account
-##############################################
+#######################################################################
+# Create IAM user and policies for Continuous Deployment (CD) account #
+#######################################################################
 
 resource "aws_iam_user" "cd" {
-  name = "recepi-app-api-cd"
+  name = "recipe-app-api-cd"
 }
 
 resource "aws_iam_access_key" "cd" {
-  user = aws_iam-user.cd.name
-    user = "aws_iam-user.cd.name"
+  user = aws_iam_user.cd.name
 }
 
 #########################################################
@@ -30,7 +29,6 @@ data "aws_iam_policy_document" "tf_backend" {
       "arn:aws:s3:::${var.tf_state_bucket}/tf-state-deploy-env/*"
     ]
   }
-
   statement {
     effect = "Allow"
     actions = [
