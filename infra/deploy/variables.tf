@@ -3,12 +3,12 @@ variable "prefix" {
   default     = "raa"
 }
 
-variable "project" {
+variable "Project" {
   description = "Project name for tagging resources"
   default     = "recipe-app-api"
 }
 
 variable "contact" {
   description = "Contact email for tagging resources"
-  default     = "mark@example.com"
+  default     = "sandeepdoddamani7@gmail.com"
 }
