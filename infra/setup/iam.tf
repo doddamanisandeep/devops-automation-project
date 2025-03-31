@@ -7,7 +7,7 @@ resource "aws_iam_user" "cd" {
 }
 
 resource "aws_iam_access_key" "cd" {
-    user = aws_iam-user.cd.name
+    user = "aws_iam-user.cd.name"
 }
 
 #########################################################
