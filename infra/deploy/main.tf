@@ -10,14 +10,14 @@ terraform {
     bucket               = "devops-automation-bkt"
     key                  = "tf-state-deploy"
     workspace_key_prefix = "tf-state-deploy-env"
-    region               = "ap-south-1"
+    region               = "us-east-1"
     encrypt              = true
     dynamodb_table       = "devops-automatio-dynomodb-table"
   }
 }
 
 provider "aws" {
-  region = "ap-south1"
+  region = "us-east-1"
   default_tags {
     tags = {
       Environment = terraform.workspace
