@@ -6,5 +6,5 @@ services:
       - ./setup:/tf/deploy
     working_dir: /tf
     environment:
-      - AWS_ACCESS_KEY_ID=AKIATY7ORTGOQZI75O44
-      - AWS_SECRET_ACCESS_KEY=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
+      - AWS_ACCESS_KEY_ID=
+      - AWS_SECRET_ACCESS_KEY=
