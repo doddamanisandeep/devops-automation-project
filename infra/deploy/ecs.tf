@@ -93,6 +93,11 @@ resource "aws_ecs_task_definition" "api" {
             containerPath = "/vol/web/static"
             sourceVolume  = "static"
           }
+          {
+            readOnly      = false
+            containerPath = "/vol/web/media"
+            sourceVolume  = "efs-media"
+          }
         ],
         logConfiguration = {
           logDriver = "awslogs"
@@ -127,6 +132,11 @@ resource "aws_ecs_task_definition" "api" {
             containerPath = "/vol/static"
             sourceVolume  = "static"
           }
+          {
+            readOnly      = true
+            containerPath = "/vol/media"
+            sourceVolume  = "efs-media"
+          }
         ]
         logConfiguration = {
           logDriver = "awslogs"
@@ -142,6 +152,19 @@ resource "aws_ecs_task_definition" "api" {
 
   volume {
     name = "static"
+  }
+
+  volume {
+    name = "efs-media"
+    efs_volume_configuration {
+      file_system_id     = aws_efs_file_system.media.id
+      transit_encryption = "ENABLED"
+
+      authorization_config {
+        access_point_id = aws_efs_access_point.media.id
+        iam             = "DISABLED"
+      }
+    }
   }
 
   runtime_platform {
